@@ -1,9 +1,9 @@
 <h1>Trang Chu Unicode</h1>
-<h2>{{ !empty(request()->keyword) ? request()->keyword : 'khong co gi' }}</h2>
+{{-- <h2>{{ !empty(request()->keyword) ? request()->keyword : 'khong co gi' }}</h2>
 <div class="container">
     {!! !empty($content) ? $content : false !!}
 </div>
-<hr>
+<hr> --}}
 {{-- @for ($i = 1; $i <= 10; $i++)
     <p>Phan tu: {{$i}}</p>
 @endfor  
@@ -84,9 +84,36 @@
         Hi, {{ age }}
     </script>
 @endverbatim --}}
-@php
+{{-- @php
   $message = "Thanh Cong";
 @endphp
-@include('paths.notice')
+@include('paths.notice') --}}
+@extends('layouts.client')
+@section('sidebar')
+    {{-- @parent --}}
+    <h3>Home sidebar</h3>
+@endsection
+@section('title')
+    {{ $title }}
+@endsection
+@section('content')
+    <h1>Trang Chu</h1>
+    <button type="button" class="show">show</button>
+@endsection
 
+@section('css')
+    <style>
+        header {
+            background: blue;
+            color: #fff;
+        }
+    </style>
+@endsection
 
+@section('Js')
+    <script>
+        document.querySelector('.show').onclick = function() {
+            alert('thanh cong');
+        }
+    </script>
+@endsection
