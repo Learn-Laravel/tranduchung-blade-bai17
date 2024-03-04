@@ -102,6 +102,14 @@
     @include('Clients.Contents.slide')
     @include('Clients.Contents.abouts')
     @datetime("2021-11-10 00:30:30")
+
+    @env('production')
+        <p>Moi truong production</p>
+    @elseenv('test')
+        <p>moi truong test</p>
+    @else
+    <p>Moi truong dev</p>
+    @endenv
 @endsection
 
 @section('css')

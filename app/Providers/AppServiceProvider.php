@@ -20,13 +20,20 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Blade::directive('datetime', function($expression){
-            $expression =trim($expression, '\'');
-            $expression = trim($expression, '""');
-            $dateObject = date_create($expression);
-            $dateFormat =$dateObject -> format('d/m/Y H:i:s');
-            if (!empty($dateObject)){
-                return  $dateFormat;
+        // Blade::directive('datetime', function($expression){
+        //     $expression =trim($expression, '\'');
+        //     $expression = trim($expression, '""');
+        //     $dateObject = date_create($expression);
+        //     $dateFormat =$dateObject -> format('d/m/Y H:i:s');
+        //     if (!empty($dateObject)){
+        //         return  $dateFormat;
+        //     }
+        //     return false;
+        // });
+        Blade::if('env', function($value){
+            // trar ve gia tri boolean
+            if(config('app.env') === $value){
+                return true;
             }
             return false;
         });
