@@ -24,6 +24,7 @@ class HomeController extends Controller
         $this->data['number'] = 1;
         $this->data['message'] = "thanh cong";
         $this->data['title'] = 'Dao tao lap trinh';
+        $this->data['message'] ='Dang ky tai khoan thanh cong';
         return view('Clients.home', $this -> data);
     }
     public function products(){

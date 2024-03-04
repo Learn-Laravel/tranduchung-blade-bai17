@@ -110,6 +110,15 @@
     @else
     <p>Moi truong dev</p>
     @endenv
+    @php
+        
+    @endphp
+    
+    <x-alert type="info" :content="$message" data-icon="youtube"/>
+
+    {{-- <x-inputs.button/>
+
+    <x-form.button/> --}}
 @endsection
 
 @section('css')
