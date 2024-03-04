@@ -1,6 +1,6 @@
 @extends('layouts.client')
 @section('sidebar')
-    {{-- @parent --}}
+    @parent
     <h3>Products sidebar</h3>
 @endsection
 @section('title')
@@ -12,10 +12,7 @@
 
 @section('css')
     <style>
-        header {
-            background: green;
-            color: #fff;
-        }
+       
     </style>
 @endsection
 

@@ -90,30 +90,22 @@
 @include('paths.notice') --}}
 @extends('layouts.client')
 @section('sidebar')
-    {{-- @parent --}}
+    @parent
     <h3>Home sidebar</h3>
 @endsection
 @section('title')
     {{ $title }}
 @endsection
 @section('content')
-    <h1>Trang Chu</h1>
-    <button type="button" class="show">show</button>
+    <h1>Trang chu</h1>
+    @include('Clients.Contents.slide')
+    @include('Clients.Contents.abouts')
 @endsection
 
 @section('css')
-    <style>
-        header {
-            background: blue;
-            color: #fff;
-        }
-    </style>
+    
 @endsection
 
 @section('Js')
-    <script>
-        document.querySelector('.show').onclick = function() {
-            alert('thanh cong');
-        }
-    </script>
+    
 @endsection
