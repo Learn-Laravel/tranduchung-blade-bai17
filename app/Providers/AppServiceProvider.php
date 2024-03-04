@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Blade;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -17,8 +18,17 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot(): void
+    public function boot()
     {
-        //
+        Blade::directive('datetime', function($expression){
+            $expression =trim($expression, '\'');
+            $expression = trim($expression, '""');
+            $dateObject = date_create($expression);
+            $dateFormat =$dateObject -> format('d/m/Y H:i:s');
+            if (!empty($dateObject)){
+                return  $dateFormat;
+            }
+            return false;
+        });
     }
 }

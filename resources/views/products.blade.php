@@ -8,14 +8,25 @@
 @endsection
 @section('content')
     <h1>San Pham</h1>
+    @push('scripts')
+    <script>
+        console.log('Push lan 2')
+    </script>
+@endpush
 @endsection
 
 @section('css')
     <style>
-       
+
     </style>
 @endsection
 
 @section('Js')
-   
 @endsection
+
+@prepend('scripts')
+    <script>
+        console.log('Push lan 1')
+    </script>
+@endprepend
+

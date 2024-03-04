@@ -19,3 +19,6 @@ Route::get('/', function () {
 });
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/sanpham', [HomeController::class, 'products'])->name('product');
+Route::get('/themsanpham', [HomeController::class, 'getAdd']);
+// Route::post('/themsanpham', [HomeController::class, 'postAdd']);
+Route::put('/themsanpham', [HomeController::class, 'putAdd']);

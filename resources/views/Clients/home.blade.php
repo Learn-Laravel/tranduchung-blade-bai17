@@ -98,8 +98,10 @@
 @endsection
 @section('content')
     <h1>Trang chu</h1>
+    @datetime('2021-12-15 15:00:30')
     @include('Clients.Contents.slide')
     @include('Clients.Contents.abouts')
+    @datetime("2021-11-10 00:30:30")
 @endsection
 
 @section('css')
